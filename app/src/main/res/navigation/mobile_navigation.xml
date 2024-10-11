@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="cz.pycrs.hikeit.ui.home.HomeFragment"
+        android:name="cz.pycrs.hikeit.ui.goals.GoalsFragment"
         android:label="@string/title_goals"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_goals" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -21,5 +21,5 @@
         android:id="@+id/navigation_notifications"
         android:name="cz.pycrs.hikeit.ui.notifications.NotificationsFragment"
         android:label="@string/title_settings"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>
