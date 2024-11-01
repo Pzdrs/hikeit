@@ -3,23 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_goals">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_goals"
         android:name="cz.pycrs.hikeit.ui.goals.GoalsFragment"
         android:label="@string/title_goals"
         tools:layout="@layout/fragment_goals" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="cz.pycrs.hikeit.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="cz.pycrs.hikeit.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_settings"
+        android:name="cz.pycrs.hikeit.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

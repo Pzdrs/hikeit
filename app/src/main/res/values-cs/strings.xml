@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">HikeIt</string>
+    <string name="title_goals">Cíle</string>
+    <string name="title_settings">Nastavení</string>
+
+    <string name="save">Uložit</string>
+
+    <plurals name="days_left" tools:ignore="MissingQuantity">
+        <item quantity="one">%d den</item>
+        <item quantity="few">%d dny</item>
+        <item quantity="other">%d dní</item>
+    </plurals>
+
+    <plurals name="hours_left" tools:ignore="MissingQuantity">
+        <item quantity="one">%d hodina</item>
+        <item quantity="few">%d hodiny</item>
+        <item quantity="other">%d hodin</item>
+    </plurals>
+
+    <string name="deadline_time_left">zbývá %1$s a %2$s</string>
+
+    <string name="add_goal">Přidat cíl</string>
+    <string name="goal_label_placeholder">Název</string>
+    <string name="deadline_date_placeholder">Lhůta (datum)</string>
+    <string name="deadline_time_placeholder">Lhůta (čas)</string>
+    <string name="goal_value_placeholder">Cíl</string>
+
+    <string name="goal_type_label">Typ cíle</string>
+
+    <string name="toast_goal_added">Cíl byl úspěšně vytvořen!</string>
+
+    <string-array name="goal_types">
+        <item>Počet kroků</item>
+        <item>Vzdálenost</item>
+    </string-array>
+
+    <string name="language">Jazyk</string>
+    <string-array name="languages">
+        <item>Anglicky</item>
+        <item>Česky</item>
+    </string-array>
+</resources>

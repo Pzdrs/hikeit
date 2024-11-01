@@ -1,6 +1,40 @@
 <resources>
     <string name="app_name">HikeIt</string>
     <string name="title_goals">Goals</string>
-    <string name="title_dashboard">Dashboard</string>
     <string name="title_settings">Settings</string>
+
+    <string name="save">Save</string>
+
+    <plurals name="days_left">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <plurals name="hours_left">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+
+    <string name="deadline_time_left">%1$s and %2$s left</string>
+
+    <string name="add_goal">Add goal</string>
+    <string name="goal_label_placeholder">Goal name</string>
+    <string name="deadline_date_placeholder">Goal deadline (date)</string>
+    <string name="deadline_time_placeholder">Goal deadline (time)</string>
+    <string name="goal_value_placeholder">The goal</string>
+
+    <string name="goal_type_label">Goal type</string>
+
+    <string name="toast_goal_added">Goal created successfully!</string>
+
+    <string-array name="goal_types">
+        <item>Steps</item>
+        <item>Distance</item>
+    </string-array>
+
+    <string name="language">Language</string>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Czech</item>
+    </string-array>
 </resources>
