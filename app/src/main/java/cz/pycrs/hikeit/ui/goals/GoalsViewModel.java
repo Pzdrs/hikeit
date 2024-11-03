@@ -59,7 +59,6 @@ public class GoalsViewModel extends AndroidViewModel {
         return goals;
     }
 
-    private final Retrofit retrofit;
     private final HikeItApiService api;
 
     public GoalsViewModel(Application application) {
@@ -67,10 +66,10 @@ public class GoalsViewModel extends AndroidViewModel {
 
         try {
             ApplicationInfo appInfo = application.getPackageManager().getApplicationInfo(application.getPackageName(), PackageManager.GET_META_DATA);
-            this.retrofit = new Retrofit.Builder()
+            Retrofit retrofit = new Retrofit.Builder()
                     .client(
                             new OkHttpClient.Builder().addInterceptor(chain ->
-                                            chain.proceed(chain.request().newBuilder().addHeader("Authorization", String.format("Bearer %s", appInfo.metaData.getString("cz.pycrs.hikeit.api_token"))).build()))
+                                            chain.proceed(chain.request().newBuilder().addHeader("Authorization", String.format("Bearer %s", appInfo.metaData.getString("cz.pycrs.hikeit.api.token"))).build()))
                                     .build())
                     .baseUrl("https://hikeit-api.pycrs.cz/api/v1/")
                     .build();
@@ -114,6 +113,9 @@ public class GoalsViewModel extends AndroidViewModel {
         )).enqueue(new retrofit2.Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+                if (response.code() != 201) {
+                    throw new RuntimeException("Failed to create goal - " + response.code());
+                }
                 try {
                     JSONObject json = new JSONObject(response.body().string());
                     Goal goal = Goal.of(json);

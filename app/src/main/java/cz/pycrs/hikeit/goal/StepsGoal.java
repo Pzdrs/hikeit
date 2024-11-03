@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 import cz.pycrs.hikeit.R;
 
 public class StepsGoal extends Goal{
-    public StepsGoal(String title, LocalDateTime deadline, int steps) {
-        super(title, deadline, steps);
+    public StepsGoal(int id, String title, LocalDateTime deadline, int steps) {
+        super(id, title, deadline, steps);
     }
 
     @Override

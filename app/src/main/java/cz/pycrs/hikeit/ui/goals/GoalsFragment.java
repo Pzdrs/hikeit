@@ -97,8 +97,7 @@ public class GoalsFragment extends Fragment {
                 binding.textGoalDeadlineDate.setText("");
                 binding.textGoalDeadlineTime.setText("");
                 binding.textGoalValue.setText("");
-            } catch(DateTimeParseException e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch(DateTimeParseException ignored) {
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }

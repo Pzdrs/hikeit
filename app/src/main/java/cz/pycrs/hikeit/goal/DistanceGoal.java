@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 import cz.pycrs.hikeit.R;
 
 public class DistanceGoal extends Goal{
-    public DistanceGoal(String title, LocalDateTime deadline, float distance) {
-        super(title, deadline, distance);
+    public DistanceGoal(int id, String title, LocalDateTime deadline, float distance) {
+        super(id, title, deadline, distance);
     }
 
     @Override
