@@ -3,7 +3,6 @@ package cz.pycrs.hikeit;
 import android.content.res.Resources;
 import android.graphics.BlendModeColorFilter;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +63,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalViewHold
 
     @Override
     public void onBindViewHolder(@NonNull GoalsAdapter.GoalViewHolder holder, int position) {
-        float progress = 5265;
+        float progress = 0;
         Goal goal = goals.get(position);
         holder.titleTextView.setText(goal.getTitle());
         holder.deadlineTextView.setText(getDeadlineText(goal.getDeadline()));
