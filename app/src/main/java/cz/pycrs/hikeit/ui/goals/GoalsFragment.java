@@ -22,6 +22,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import org.json.JSONException;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -91,11 +99,11 @@ public class GoalsFragment extends Fragment {
                 binding.textGoalValue.setText("");
             } catch(DateTimeParseException e) {
                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
             }
 
         });
-
-
 
         return root;
     }
@@ -125,7 +133,6 @@ public class GoalsFragment extends Fragment {
 
     private void setupRecycler() {
         viewModel.getGoals().observe(getViewLifecycleOwner(), goals -> {
-            System.out.println("goals init");
             binding.goalsRecycler.setAdapter(new GoalsAdapter(goals, getResources()));
         });
     }

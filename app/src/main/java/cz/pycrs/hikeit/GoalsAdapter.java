@@ -29,6 +29,9 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalViewHold
         long daysLeft = timeLeft.toDaysPart();
         long hoursLeft = timeLeft.toHoursPart();
 
+        if(now.isAfter(deadline))
+            return res.getString(R.string.deadline_expired);
+
         String daysText = daysLeft > 0
                 ? res.getQuantityString(R.plurals.days_left, (int) daysLeft, daysLeft)
                 : "";  // Empty string if no days left
@@ -61,11 +64,14 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalViewHold
 
     @Override
     public void onBindViewHolder(@NonNull GoalsAdapter.GoalViewHolder holder, int position) {
+        float progress = 5265;
         Goal goal = goals.get(position);
         holder.titleTextView.setText(goal.getTitle());
         holder.deadlineTextView.setText(getDeadlineText(goal.getDeadline()));
-        holder.progressTextView.setText("Nada");
-        holder.progressBar.setProgress(100);
+        if (LocalDateTime.now().isAfter(goal.getDeadline()))
+            holder.deadlineTextView.setTextColor(Color.RED);
+        holder.progressTextView.setText(goal.getProgressText(res,progress));
+        holder.progressBar.setProgress((int) ((progress/ goal.getValue()) * 100));
         holder.progressBar.getProgressDrawable().setColorFilter(new BlendModeColorFilter(Color.GREEN, android.graphics.BlendMode.SRC_IN));
     }
 
@@ -75,7 +81,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalViewHold
     }
 
     public static class GoalViewHolder extends RecyclerView.ViewHolder {
-        TextView titleTextView,deadlineTextView, progressTextView;
+        TextView titleTextView, deadlineTextView, progressTextView;
 
         ProgressBar progressBar;
 
