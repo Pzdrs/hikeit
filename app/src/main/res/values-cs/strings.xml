@@ -25,6 +25,8 @@
     <string name="steps_progress">%1$,d / %2$,d kroků</string>
     <string name="distance_progress">%1$,.1f / %2$,.1f km</string>
 
+    <string name="toast_goal_finished">Cíl dokončen!</string>
+
     <string name="add_goal">Přidat cíl</string>
     <string name="goal_label_placeholder">Název</string>
     <string name="deadline_date_placeholder">Lhůta (datum)</string>

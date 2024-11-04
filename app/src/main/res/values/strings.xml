@@ -22,6 +22,8 @@
     <string name="steps_progress">%1$,d / %2$,d steps</string>
     <string name="distance_progress">%1$,.1f / %2$,.1f km</string>
 
+    <string name="toast_goal_finished">Goal finished!</string>
+
     <string name="add_goal">Add goal</string>
     <string name="goal_label_placeholder">Goal name</string>
     <string name="deadline_date_placeholder">Goal deadline (date)</string>

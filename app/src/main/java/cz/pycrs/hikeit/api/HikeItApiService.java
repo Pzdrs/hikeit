@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface HikeItApiService {
     @GET("goals")
@@ -16,4 +17,7 @@ public interface HikeItApiService {
 
     @POST("goals")
     Call<ResponseBody> createGoal(@Body RequestBody body);
+
+    @POST("goals/{id}/finish")
+    Call<ResponseBody> finishGoal(@Path("id") int id);
 }

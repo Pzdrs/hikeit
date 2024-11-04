@@ -39,7 +39,7 @@ public class GoalsFragment extends Fragment {
 
         View root = binding.getRoot();
 
-        binding.goalsRecycler.setAdapter(new GoalsAdapter(viewModel.getGoals().getValue(), getResources()));
+        binding.goalsRecycler.setAdapter(new GoalsAdapter(viewModel.getGoals().getValue(), getResources(), viewModel.getApiService()));
         binding.goalsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
         setupSpinner();
@@ -115,7 +115,7 @@ public class GoalsFragment extends Fragment {
 
     private void setupRecycler() {
         viewModel.getGoals().observe(getViewLifecycleOwner(), goals -> {
-            binding.goalsRecycler.setAdapter(new GoalsAdapter(goals, getResources()));
+            binding.goalsRecycler.setAdapter(new GoalsAdapter(goals, getResources(), viewModel.getApiService()));
         });
     }
 }

@@ -134,4 +134,8 @@ public class GoalsViewModel extends AndroidViewModel {
             }
         });
     }
+
+    public HikeItApiService getApiService() {
+        return api;
+    }
 }

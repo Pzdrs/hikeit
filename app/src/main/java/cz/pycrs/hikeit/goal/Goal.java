@@ -9,6 +9,8 @@ import org.json.JSONObject;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import lombok.Getter;
+
 public abstract class Goal {
     public Goal(int id, String title, LocalDateTime deadline, float value) {
         this.id = id;
@@ -33,6 +35,10 @@ public abstract class Goal {
     protected float value;
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
